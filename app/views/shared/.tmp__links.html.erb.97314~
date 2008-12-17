@@ -1,0 +1,39 @@
+<ul>
+	<li><h3>Brukernivå</h3></li>
+		<% @all_levels.each do |lev| -%>
+	<li><%= link_to_unless_current(lev.name, :action => 'level', :id => lev.id) %></li>
+	<% end -%>
+</ul>
+		
+<ul>
+	<li><h3>Type Blogg</h3></li>
+		
+	<li><%= link_to_unless_current("post", :action => 'type', :slag => "post") %></li>
+	<li><%= link_to_unless_current("video", :action => 'type', :slag => "video") %></li>
+	<li><%= link_to_unless_current("guide", :action => 'type', :slag => "guide") %></li>
+
+</ul>
+<div id="categories">
+	<ul>
+	<li><h3>Kategorier</h3></li>
+	
+		<% @all_categories.each do |cat| -%>
+		<li><%= link_to_unless_current(cat.name, :action => 'category', :id => cat.id) %>
+			
+		</li>
+		<% end -%>
+	</ul>
+
+</div>
+<div id="search_form">
+	<% form_tag view_blogg_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>			
+	</div>
+	
+	<% tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class| %>
+    <%= link_to tag.name, { :action => :tag, :id => tag.id }, :class => css_class %>
+  <% end %>

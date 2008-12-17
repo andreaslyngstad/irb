@@ -1,0 +1,48 @@
+<% @page_title = "Bloggkommentarer" -%>
+
+<h1 class="title">Kommentarer</h1>
+
+<div id="komlinker">
+<p>
+	<%= link_to_unless_current('alle', :status => 'alle')%>&nbsp;|
+	<%= link_to_unless_current('nye', :status => 'nye')%>&nbsp;|
+	<%= link_to_unless_current('godkjent', :status => 'godkjent')%>&nbsp;|
+	<%= link_to_unless_current('spam', :status => 'spam')%>
+</p></div>
+<div id="komoverskrifter">
+ <b> <ul>
+	<% form_tag(:controller => "comments", :action => 'set_status') do %>
+	  	<li>&nbsp;</li>
+		<li style="width: 10em">På Innlegg</li>
+		<li style="width: 10em">Forfatter</li>
+	  	<li style="width: 30em">Kommentar</li>
+		<li style="width: 5em">Status</li>
+		<li>Dato</li>
+	</ul></b>
+	</div>
+	<div id="komunder">
+		
+		
+	<% for comment in @comments%>
+	<ul>
+	  	<li style="width: 2em"> <%= check_box_tag('commentlist[]', comment.id) %> &nbsp;</li>
+		<li style="width: 10em"><%= h(comment.post.title)%></li>
+			<li style="width: 10em"><%= mail_to(h(comment.author_email), truncate(h(comment.author), :length => 17)) %></li>
+			<li style="width: 30em"><%= truncate(h(comment.content), :length => 50) %>
+			<%= link_to('se hele', :action => "show", :id => comment) if 
+			h(comment.content).length > 50 %></li>
+		<li style="width: 5em"><%= h(comment.status) %></li>
+		<li><%= comment.created_at.strftime('%m/%d/%y') %></li>
+		</ul>
+			<% end -%>	
+			<ul>
+		<li style="width: 15em"><%= submit_tag("Godkjent")%> 
+	<%= submit_tag("Spam")%> <%= submit_tag("Slett") %></li>
+	</ul>
+	<% end -%>
+
+
+	
+	</div>
+
+	

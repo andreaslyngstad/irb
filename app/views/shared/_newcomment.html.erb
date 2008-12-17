@@ -1,0 +1,21 @@
+<div id=comment_form>
+	
+<h3>Skriv kommentar</h3> <%= h("Hvis du vil legge inn kode bruk  <code:ruby> ..kode her.. </code>")%>
+<p style="color: green"><%= flash[:notice] %></p>
+
+<% form_for(:comment, @comment, :url => { :action => "add_comment", :id => @post.id, :anchor => "comment_form"}) do |f|%>
+
+    Ditt navn: 
+   <%= f.text_field(:author)%>
+ 
+    Din e-post: 
+    <%= f.text_field(:author_email) %>
+ 
+     Kommentar:
+    <%= f.text_area(:content, :cols => 60, :rows => 20 )%>
+  	<%= show_simple_captcha(:label => "For å bevise at du er et menneske og ikke en spam robot, må du skrive in koden ovenfor.", :image_style => 'charcoal_grey') %>
+  
+
+<%= f.submit("Lagre") %>
+		<% end -%>
+</div>

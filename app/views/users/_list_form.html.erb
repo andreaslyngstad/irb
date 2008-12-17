@@ -1,0 +1,52 @@
+
+<h1 class="title">Alle Brukere|<%= link_to 'Ny Bruker', users_path %></h1>
+
+<div id="content_l">
+
+<div id="bruker_overskrifter">
+	<b><ul>
+		<li>Fornavn</li>	    
+	   	<li>Etternavn</li>
+		<li style="width: 14em;">E - post</li>
+		 <li style="width: 8em">Brukernavn</li>
+   		<li>&nbsp</li>
+	</ul></b>
+</div>
+<div id="bruker_under"> 
+	<% for user in @users %>
+	 <ul>
+		 <li><%= truncate(h(user.first_name), 17, "...") %></li>
+		 <li><%= truncate(h(user.last_name), 17, "...") %></li>
+		 <li style="width: 14em"><%= mail_to(h(user.email), truncate(h(user.email), 17, "...")) %></li>
+								
+		 <li style="width: 8em"><%= truncate(h(user.login), 17, "...") %></li>
+		 <li><%= link_to 'Slett', user, :confirm => 'Er du sikker på at du vil slette denne brukeren?', :method => :delete %>
+		 <%= link_to 'Oppdater', :action => 'index', :id => user %></li>
+		 <br/>
+	  
+	  
+	  <% end %>
+</ul>
+</div>
+</div>
+<div id="content_r">
+		
+	
+<% if params[:id].blank? %>
+	<h3>Ny Bruker</h3>
+	
+	<% form_for :user, :url => users_path do |f| -%>
+	<%= render( :partial => "form", :locals => {:f => f})%>
+	<p><%= submit_tag 'Lagre' %></p>
+	<%= error_messages_for :user %>
+	<% end -%>
+<% else -%>
+	<h3>Oppdater Bruker</h3>
+	<% form_for(:user, @user, :url => {:action => "index", :id => @user} ) do |f| -%>
+	<%= render(:partial => 'form', :locals => {:f => f})%>
+	<%= f.submit('oppdater')%>
+	<%= f.error_messages %>
+	<% end -%>
+<% end -%>	
+
+	</div>

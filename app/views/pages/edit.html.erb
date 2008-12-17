@@ -1,0 +1,17 @@
+<% @page_title = "Oppdatere side" %>
+
+<h2>Oppdatere side</h2>
+
+<div id="sidecontent_l">
+
+  <%= render :partial => "form" %>
+   
+</div>
+
+<div id="sidecontent_r">
+		<h1 class="title">Sider|<%= link_to 'Ny side', new_page_path %></h1>
+
+<%= nested_set_list_for Page.roots %>
+	
+	
+	</div>

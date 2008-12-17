@@ -1,0 +1,37 @@
+<% @page_title = @page.title %>
+
+<!--[if IE]>
+<style type="text/css" media="screen">
+body {
+behavior: url(csshover.htc);
+font-size: 100%;
+}
+
+#menu ul li {float: left; width: 100%;}
+#menu ul li a {height: 1%;} 
+
+#menu a, #menu h2 {
+font: bold 0.9em/1.4em arial, helvetica, sans-serif;
+}
+</style>
+
+<![endif]-->
+	
+
+	
+<div id="menu">
+	<%= public_nested Page.roots %>		
+</div>
+
+
+<div id="content_l">
+	<%= @page.body %>
+</div>
+
+
+<div id="content_r">
+	
+	<%= render :partial => "shared/links" %>	
+	
+
+</div>

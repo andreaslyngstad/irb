@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Rubyonrails.no: <%= @page_title %></title>
+  
+  <%= stylesheet_link_tag 'public' %>
+  <%= javascript_include_tag :defaults	%>
+   <style>
+	<%= CodeRay::Encoders[:html]::CSS.new(:murphy).stylesheet %>
+	</style>
+
+</head>
+<body>
+<div id="header">
+	<div id="header_wrapper">
+		<div id="login_form">
+			<%=render(:partial => 'sessions/new')%>
+		</div>
+		<div id="login_form_text">
+			<%if logged_in?%>
+			Hei <%= current_user.first_name %>! Du er innlogget.
+				<%= link_to( "Logg ut","/logout") %> | 
+				<%= link_to( "Til CMS", view_cms_path ) %>
+			<%end%>
+		</div>
+		<ul>
+			<li><%= link_to 'Kontakt', new_message_path %></li>
+			<li><%= link_to 'Blogg', view_blogg_path %></li>
+			
+			<li><%= link_to 'Forsiden', root_path %></li>
+		</ul>
+	</div>
+</div>
+<div id="content">
+	<div id="content_wrapper">
+		<p style="color: green"><%= flash[:notice] %></p>
+		<p style="color: red"><%= flash[:error] %></p>
+		<%= yield  %>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+<!-- start footer -->
+<div id="footer">
+	<div id="footer_wrapper">
+		<div class="boks">
+			<h3>Siste fra bloggen</h3>
+			<ul>
+				<% for recent_post in @recent_posts %>
+					<li><%= link_to(recent_post.title, :action => 'view_post', :id => recent_post.id)  %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="boks">
+			<h3>Siste videoer</h3>
+			<ul>
+				<% for recent_post in @recent_videos %>
+					<li><%= link_to(recent_post.title, :action => 'view_post', :id => recent_post.id)  %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="boks">
+			<h3>Siste guider</h3>
+			<ul>	
+				<% for recent_post in @recent_guides %>
+					<li><%= link_to(recent_post.title, :action => 'view_post', :id => recent_post.id)  %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div id="footer_text"></div>
+	</div>
+</div>
+<!-- end footer -->
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+<h3>Siste innlegg i bloggen</h3>
+
+<% for recent_post in @recent_posts %>
+	<div id="recent_post">
+	<ul>
+	<li><%= link_to(recent_post.title, :action => 'view_post', :id => recent_post.id)  %></li>
+	<li><%= recent_post.lead %></li>
+	
+	</ul>
+	</div>
+		<% end %>

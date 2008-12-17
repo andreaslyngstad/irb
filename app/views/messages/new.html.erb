@@ -1,0 +1,30 @@
+<h1>Melding til rubyonrails.no</h1>
+
+<p>Hei. Hvis du har spørsmål eller forslag til hvordan vi kan gjøre siden bedre kan du sende oss en melding.
+</p><br />
+<% form_for(@message) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :ditt_navn %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :din_email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :emne %><br />
+    <%= f.text_field :subject %>
+  </p>
+  <p>
+   
+    <%= f.text_area :body %>
+  </p>
+  <%= show_simple_captcha(:label => "For å bevise at du er et menneske og ikke en spam robot, må du skrive in koden ovenfor.", :image_style => 'charcoal_grey') %>
+  <p>
+    <%= f.submit "Send" %>
+  </p>
+<% end %>
+
+

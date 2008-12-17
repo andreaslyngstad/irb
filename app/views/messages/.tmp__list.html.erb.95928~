@@ -1,0 +1,43 @@
+<h1 class="title">Mottatte meldinger</h1>
+
+<div id="content_l">
+	<div id="overskrifter">
+	<b><ul>	
+	<li>Emne</li>
+	<li>Navn</li>
+   	<li>Email</li>
+    
+    <li>Body</li>
+	</ul></b>
+  </div>
+<div id="under"> 
+<% for message in @messages %>
+  <ul>
+  	<li><%=link_to(message.subject, message) %></li>
+    <li><%=h message.name %></li>
+   	<li><%=mail_to(truncate((message.email), :length => 22))%></li>
+
+   	<li><%= truncate((message.body), :length => 22) %></li>
+    
+   
+    <%= link_to 'slett', message, :confirm => 'Er du sikker på at du vil slette denne meldingen?', :method => :delete %></li>
+ </ul>
+ 
+<% end %>
+  </div>
+</div>
+<div id="content_r">
+		<% if !@message.nil? %>
+		<h3><%= @message.subject %></h3><br/>
+		Forfattet av <b><%= @message.name%></b> <br/>
+		Postet: <%= @message.created_at.strftime('%d.%m.%y kl %H:%m')%> <br/>
+		
+		<br/>
+		<%= @message.body  %>
+		
+		<% end %>
+		
+		<p style="color: green;"><%= flash[:notice] %></p>
+		
+		<p style="color: green;"><%= flash[:error] %></p>
+	</div>

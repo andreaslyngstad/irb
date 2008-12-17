@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		
+				<title>Admin ROR.no<%= ": " + @page_title if @page_title%></title>
+				<meta name="keywords" content="" />
+<meta name="description" content="" />
+		<%= stylesheet_link_tag("default.css")%>
+	</head>
+
+	<body>
+		<div id="header">
+	<div id="logo">
+		<h1>Admin for RubyonRails.no<sup></sup></a></h1>
+		<h2>rubyonrails</h2>
+	</div>
+	</div>
+	
+		<%= yield %>
+	</body>
+	</div>
+	<div class="push"></div>
+<!-- end page -->
+<!-- start footer -->
+<div class="footer">
+	<p id="legal"><%= link_to("Laget av gutta på irb.", "http://www.irb.no", {:target => "_blank"})%></p>
+</div>
+<!-- end footer -->
+</html>

@@ -1,0 +1,5 @@
+<% form_for(:user, @user, :url => {:action => "index", :id => @user} ) do |f| -%>
+	<%= f.error_messages %>
+	<%= render(:partial => 'form', :locals => {:f => f})%>
+	<%= f.submit('oppdater')%>
+	<% end -%>

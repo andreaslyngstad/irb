@@ -1,0 +1,37 @@
+<div id="content_l">
+			<p style="color: green"><%= flash[:notice] %></p>
+		<ul>
+		<% form_for(@post) do |f| -%>
+  		<li><%= f.error_messages %></li>
+		
+        <li><%= f.label :Overskrift %></li>
+		<li><%= f.text_field(:title, :size => 80, :style => "font-size: 1.5em")%>	</li>
+        <li><%= f.label :Tag, "Legg inn tags, separer med komma" %></li>
+		<li><%= f.text_field(:tag_list, :size => 80, :style => "font-size: 1.5em")%>	</li>
+		<li><%= f.label :Ingress %></li>
+		<li><%= f.text_area(:lead, :cols => 61, :rows => 7, :style => "font-size: 1.5em")%></li>	
+		<li><%= f.label :video_url, "Hvis du legger inn en video, legg urlen til videoen her." %></li>
+        <li><%= f.text_area(:video_url, :cols => 84, :rows => 2)%></li>	
+        <li><%= f.label :Innhold %></li>
+        <li><%= textile_editor 'post', 'content', :cols => 84, :rows => 40%></li>		
+        </ul>
+ <p class="submit"><%= f.submit "Lagre" %></p>
+   </div>
+  <div id="content_r">
+  	<h2>Kategorier</h2>
+	<ul><% @all_categories.each do |cat| -%>
+	<li><%= check_box_tag('categories[]', cat.id, @post.categories.map {|c| c.id }.include?(cat.id)) %>
+	<%= cat.name %></li>
+	<% end -%></ul>
+	 <h2><%= f.label :Brukernivå %></h2>
+	<%= f.select(:level_id, Level.find(:all).collect {|l| [l.name, l.id]})%>
+	<br/><br/>
+	<h2><%= f.label :status %></h2>
+		<%= f.select(:status, ['Kladd', 'Offentlig'])%>
+		<br/><br/>
+	<h2><%= f.label :slag %></h2>
+		<%= f.select(:slag, ['post', 'video', 'guide'])%>	
+	</div>
+<%= textile_editor_initialize -%>
+<% end -%>
+

@@ -1,0 +1,12 @@
+<% @page_title = @current_action%>
+
+<div id="content_l">					
+	<%= render :partial => "shared/post"%>	
+</div>
+<div id="content_r">
+	<%= render :partial => "shared/links" %>	
+	
+	
+</div>
+
+

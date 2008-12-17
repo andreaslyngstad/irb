@@ -1,0 +1,24 @@
+
+<% for post in @posts %>
+	<div class="post">
+		<h2><%= link_to(h(post.title), view_post_url(:id => post.id, :slag => post.slag, :title => post.title)) %>&nbsp;|&nbsp;<%= post.slag %></h2>
+		<p>
+		
+			
+		
+			Av <%= h(post.author.full_name) %>, <%= h(post.created_at.strftime("%d. %B %Y")) %>. 
+			&nbsp;|&nbsp;Kategorisert:
+			<% if !post.categories.nil?%>
+			 <%= h(post.categories.collect {|cat| cat.name if !cat.name.nil?}.to_sentence(:connector => "og")) %>
+			 <% end %>
+			&nbsp;|&nbsp;Brukernivå:
+			<% if !post.level.nil? -%><%= post.level.name %><% end -%>
+		</p>
+		<p><%= h(post.lead) %></p>
+		<p>	
+			<% if post.approved_comments.size != 0 -%>
+				<%= link_to(pluralize(post.approved_comments.size, 'kommentar'), :action => 'view_post', :id => post.id, :anchor => 'comments')%>
+			<% end -%>
+		</p>
+	</div>
+<% end %>

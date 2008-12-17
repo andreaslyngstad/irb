@@ -1,0 +1,16 @@
+<% form_for(@page) do |f| %>
+  <%= f.error_messages %>
+    <ul><li><%= f.label :navn %></li>  
+    <li><%= f.text_field :name, :size => 80, :style => "font-size: 1.5em"%></li> 
+	<li><%= f.label :tittel %></li>    
+	<li><%= f.text_field :title %></li>
+	<li><%= f.label :Velg_forelder %></li>
+  	<li><%= f.select :proposed_parent_id, 
+		@page.available_parents.map{|page| [padded_page_name(page,2,"-"), page.id]}, :include_blank => true %></li>
+   	<li><%= f.label :Link_til_denne_siden %></li>
+    <li><%= f.text_field :navlabel  %></li>
+    <li><%= f.label :innhold %></li>   
+  	<li><%= textile_editor 'page', 'body', :cols => 84, :rows => 40%></li>		  
+	<li><%= f.submit "Lagre" %></li></ul>  
+	<%= textile_editor_initialize -%>
+<% end %>

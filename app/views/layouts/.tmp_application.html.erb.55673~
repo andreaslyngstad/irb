@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		
+				<title>Admin<%= ": " + @page_title if @page_title%></title>
+				<meta name="keywords" content="" />
+<meta name="description" content="" />
+		<%= stylesheet_link_tag("default.css")%>
+		<%= javascript_include_tag :defaults%>
+  	
+
+  		
+	</head>
+	
+	
+	<body>
+<!-- start header -->
+<div id="header">
+	<div id="header_wrapper">
+		<h1 style="color: #fff">Admin for RubyonRails.no</h1>
+		
+		
+		<div id="login_form">
+			<%=render(:partial => 'sessions/new')%>
+		</div>
+		<div id="login_form_text">
+			<%if logged_in?%>
+			Hei <%= current_user.first_name %>! Du er innlogget.
+				<%= link_to "Logg ut","/logout" %> | 
+				<%= link_to( "Til siden", root_path) %>
+			<%end%>
+		</div>
+		
+		
+	
+			<ul>
+			<li><%= link_to("Meldinger", messages_path )%></li>
+			<li><%= link_to("Sider", pages_path )%></li>
+			<li><%= link_to("Brukere", users_path )%></li>
+			<li><%= link_to("Blogg", posts_path ) %></li>
+			
+			<li><%= link_to("Hjem", view_cms_path )%></li>
+			 <% if controller.controller_name.to_s == "posts" ||
+				  controller.controller_name.to_s == "categories" ||
+				  controller.controller_name.to_s == "comments"%>
+			<br/>		
+			<li><%= link_to("Kategorier", categories_path )%></li>
+			<li><%= link_to("Kommentarer", comments_path ) %></li>
+			
+			
+			<% end %>
+			
+			</ul>
+
+	  </div>
+	</div>
+</div>
+	
+	
+	
+
+<!-- end header -->
+<!-- start page -->
+
+	<div id="content">
+	<div id="content_wrapper">
+		<style>
+
+</style>
+		<p style="color: green"><%= flash[:notice] %></p>
+		<p style="color: red"><%= flash[:error] %></p>
+			<%= yield  %>
+			
+	<div style="clear:both;"></div>
+	</div>
+</div>
+	
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+	<div id="footer_wrapper">
+		<div class="boks">
+			<h3>Siste fra bloggen</h3>
+			<% for recent_post in @recent_posts %>
+	
+	<ul>
+	<li><%= link_to(recent_post.title, :controller => "public", :action => 'view_post', :id => recent_post.id)  %></li>
+	</ul>
+	<% end %>
+		</div>
+		<div class="boks">
+			<h3>Siste videoer</h3>
+			<% for recent_post in @recent_videos %>
+	
+	<ul>
+	<li><%= link_to(recent_post.title, :controller => "public", :action => 'view_post', :id => recent_post.id)  %></li>
+	
+	
+	</ul>
+		<% end %>
+		</div>
+		<div class="boks">
+			<h3>Siste guider</h3>
+			<% for recent_post in @recent_guides %>
+	
+	<ul>
+	<li><%= link_to(recent_post.title, :controller => "public", :action => 'view_post', :id => recent_post.id)  %></li>
+	</ul>
+	<% end %>
+		</div>
+		
+			<!--<# tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class| %>
+    			<#= link_to tag.name, { :controller => :posts, :action => :tag, :id => tag.name }, :class => css_class %>
+			<# end %>-->
+		
+		<div id="footer_text">
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 			laboris nisi ut aliquip ex ea
+		</div>
+	</div>	
+</div>		
+<!-- end footer -->
+</body>
+</html>
+
+			
+	

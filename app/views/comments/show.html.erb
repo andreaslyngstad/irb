@@ -1,0 +1,26 @@
+<p>
+  <b>Post:</b>
+  <%=h @comment.post.title %><br />
+
+
+
+  <b>Forfatter:</b>
+  <%=h @comment.author %><br />
+
+
+
+  <b>Forfatters e-post:</b>
+  <%= mail_to(@comment.author_email, @comment.author_email) %><br />
+</p>
+
+<p>
+  <b>Innhold:</b><br />
+  <%=h @comment.content %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @comment.status %>
+</p>
+
+<%= link_to 'Tilbake', comments_path %>

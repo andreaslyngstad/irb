@@ -1,0 +1,53 @@
+
+
+<div id="content_l">
+	<div id="overskrifter">
+		
+		<b><ul>
+		<li>Tittel</li>	    
+	   	<li>Forfatter</li>
+		 <li style="width: 6em;">Laget</li>
+		<li>Status</li>
+	</ul></b>
+	  
+	</div>
+	<div id="under"> 
+	
+	 
+	<% for post in (@posts) -%>
+ <ul> 
+	 <li><%=link_to(truncate((post.title), 22, "..."), video_post_path(post)) %></li>
+	    <li><%= mail_to(h(post.author.email), truncate(h(post.author.full_name ), 17, "...")) %></li>
+	    <li style="width: 6em;"><%= post.created_at.strftime('%d.%m.%y') %></li>
+		<li style="width: 4em;"><%= post.status %></li>
+		<% if current_user.id == post.author.id || current_user.id == 1 -%>
+	    <li style="width: 14em;">
+	    	<%= link_to 'Vis', :controller => "video/posts", :action => "preview", :id => @post.id%>
+			<%= link_to 'Oppdater', edit_video_post_path(post)%>
+	  <%= link_to 'Slett', post, :confirm => 'Denne videoen blir slettet. Er du sikker?', :method => :delete %></li>
+	  <% else -%>
+	  <li>&nbsp</li>
+	  <li>&nbsp</li>
+	  <% end -%>
+	 </ul>
+	<% end -%>
+	
+	
+	</div>
+</div>
+	<div id="content_r">
+		<% if !@post.nil? %>
+		<h3><%= @post.title %></h3><br/>
+		Forfattet av <b><%= @post.author.full_name %></b> <br/>
+		Postet: <%= @post.created_at.strftime('%d.%m.%y kl %H:%m')%> <br/>
+		Kategorier: <%= @post.categories.collect {|c| c.name }.to_sentence(:connector => "og") %> <br/><br/>
+		
+		<b><%= @post.lead  %></b>
+		
+		<% end %>
+		
+		<p style="color: green;"><%= flash[:notice] %></p>
+		
+		<p style="color: green;"><%= flash[:error] %></p>
+	</div>
+

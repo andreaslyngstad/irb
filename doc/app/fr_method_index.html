@@ -1,0 +1,134 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+
+    Methods
+
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Methods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="rdoc-style.css" type="text/css" />
+  <base target="docwin" />
+</head>
+<body>
+<div id="index">
+  <h1 class="section-bar">Methods</h1>
+  <div id="index-entries">
+    <a href="classes/AuthenticatedSystem.html#M000095">access_denied (AuthenticatedSystem)</a><br />
+    <a href="classes/PublicController.html#M000057">add_comment (PublicController)</a><br />
+    <a href="classes/User.html#M000023">authenticate (User)</a><br />
+    <a href="classes/AuthenticatedTestHelper.html#M000089">authorize_as (AuthenticatedTestHelper)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000093">authorized? (AuthenticatedSystem)</a><br />
+    <a href="classes/PublicController.html#M000053">blogg (PublicController)</a><br />
+    <a href="classes/PublicController.html#M000058">category (PublicController)</a><br />
+    <a href="classes/SessionsController.html#M000019">create (SessionsController)</a><br />
+    <a href="classes/PagesController.html#M000005">create (PagesController)</a><br />
+    <a href="classes/CommentsController.html#M000064">create (CommentsController)</a><br />
+    <a href="classes/UsersController.html#M000029">create (UsersController)</a><br />
+    <a href="classes/Video/PostsController.html#M000077">create (Video::PostsController)</a><br />
+    <a href="classes/CategoriesController.html#M000015">create (CategoriesController)</a><br />
+    <a href="classes/Guide/PostsController.html#M000085">create (Guide::PostsController)</a><br />
+    <a href="classes/PostsController.html#M000036">create (PostsController)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000091">current_user (AuthenticatedSystem)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000092">current_user= (AuthenticatedSystem)</a><br />
+    <a href="classes/Video/PostsController.html#M000079">destroy (Video::PostsController)</a><br />
+    <a href="classes/PagesController.html#M000007">destroy (PagesController)</a><br />
+    <a href="classes/SessionsController.html#M000020">destroy (SessionsController)</a><br />
+    <a href="classes/UsersController.html#M000030">destroy (UsersController)</a><br />
+    <a href="classes/CategoriesController.html#M000017">destroy (CategoriesController)</a><br />
+    <a href="classes/Guide/PostsController.html#M000087">destroy (Guide::PostsController)</a><br />
+    <a href="classes/PostsController.html#M000038">destroy (PostsController)</a><br />
+    <a href="classes/CommentsController.html#M000066">destroy (CommentsController)</a><br />
+    <a href="classes/PagesController.html#M000004">edit (PagesController)</a><br />
+    <a href="classes/CommentsController.html#M000063">edit (CommentsController)</a><br />
+    <a href="classes/UsersController.html#M000028">edit (UsersController)</a><br />
+    <a href="classes/PostsController.html#M000035">edit (PostsController)</a><br />
+    <a href="classes/Guide/PostsController.html#M000084">edit (Guide::PostsController)</a><br />
+    <a href="classes/CategoriesController.html#M000014">edit (CategoriesController)</a><br />
+    <a href="classes/Video/PostsController.html#M000076">edit (Video::PostsController)</a><br />
+    <a href="classes/User.html#M000025">email= (User)</a><br />
+    <a href="classes/Page.html#M000048">find_main (Page)</a><br />
+    <a href="classes/Page.html#M000049">find_subpages (Page)</a><br />
+    <a href="classes/User.html#M000022">full_name (User)</a><br />
+    <a href="classes/ApplicationController.html#M000046">get_pages_for_tabs (ApplicationController)</a><br />
+    <a href="classes/ApplicationController.html#M000047">get_sub_tabs (ApplicationController)</a><br />
+    <a href="classes/PublicController.html#M000052">get_unformatted_text (PublicController)</a><br />
+    <a href="classes/PublicController.html#M000055">guide (PublicController)</a><br />
+    <a href="classes/LevelsController.html#M000009">guides (LevelsController)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000105">handle_remember_cookie! (AuthenticatedSystem)</a><br />
+    <a href="classes/UsersHelper.html#M000068">if_authorized? (UsersHelper)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000098">included (AuthenticatedSystem)</a><br />
+    <a href="classes/PagesController.html#M000001">index (PagesController)</a><br />
+    <a href="classes/Video/PostsController.html#M000072">index (Video::PostsController)</a><br />
+    <a href="classes/Guide/PostsController.html#M000080">index (Guide::PostsController)</a><br />
+    <a href="classes/PostsController.html#M000031">index (PostsController)</a><br />
+    <a href="classes/CategoriesController.html#M000011">index (CategoriesController)</a><br />
+    <a href="classes/PublicController.html#M000050">index (PublicController)</a><br />
+    <a href="classes/CommentsController.html#M000060">index (CommentsController)</a><br />
+    <a href="classes/HomeController.html#M000039">index (HomeController)</a><br />
+    <a href="classes/UsersController.html#M000026">index (UsersController)</a><br />
+    <a href="classes/ApplicationController.html#M000045">instantiate_controller_and_action_names (ApplicationController)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000106">kill_remember_cookie! (AuthenticatedSystem)</a><br />
+    <a href="classes/PublicController.html#M000059">level (PublicController)</a><br />
+    <a href="classes/UsersHelper.html#M000071">link_to_current_user (UsersHelper)</a><br />
+    <a href="classes/UsersHelper.html#M000070">link_to_login_with_IP (UsersHelper)</a><br />
+    <a href="classes/UsersHelper.html#M000069">link_to_user (UsersHelper)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000090">logged_in? (AuthenticatedSystem)</a><br />
+    <a href="classes/User.html#M000024">login= (User)</a><br />
+    <a href="classes/AuthenticatedTestHelper.html#M000088">login_as (AuthenticatedTestHelper)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000100">login_from_basic_auth (AuthenticatedSystem)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000101">login_from_cookie (AuthenticatedSystem)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000099">login_from_session (AuthenticatedSystem)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000094">login_required (AuthenticatedSystem)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000102">logout_keeping_session! (AuthenticatedSystem)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000103">logout_killing_session! (AuthenticatedSystem)</a><br />
+    <a href="classes/Guide/PostsController.html#M000083">new (Guide::PostsController)</a><br />
+    <a href="classes/SessionsController.html#M000018">new (SessionsController)</a><br />
+    <a href="classes/UsersController.html#M000027">new (UsersController)</a><br />
+    <a href="classes/PostsController.html#M000034">new (PostsController)</a><br />
+    <a href="classes/PagesController.html#M000003">new (PagesController)</a><br />
+    <a href="classes/CategoriesController.html#M000013">new (CategoriesController)</a><br />
+    <a href="classes/Video/PostsController.html#M000075">new (Video::PostsController)</a><br />
+    <a href="classes/CommentsController.html#M000062">new (CommentsController)</a><br />
+    <a href="classes/SessionsController.html#M000021">note_failed_signin (SessionsController)</a><br />
+    <a href="classes/ApplicationHelper.html#M000108">parse_coderay (ApplicationHelper)</a><br />
+    <a href="classes/LevelsController.html#M000008">posts (LevelsController)</a><br />
+    <a href="classes/Video/PostsController.html#M000074">preview (Video::PostsController)</a><br />
+    <a href="classes/PostsController.html#M000033">preview (PostsController)</a><br />
+    <a href="classes/Guide/PostsController.html#M000082">preview (Guide::PostsController)</a><br />
+    <a href="classes/ApplicationController.html#M000044">recent_guides (ApplicationController)</a><br />
+    <a href="classes/ApplicationController.html#M000042">recent_posts (ApplicationController)</a><br />
+    <a href="classes/ApplicationController.html#M000043">recent_videos (ApplicationController)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000097">redirect_back_or_default (AuthenticatedSystem)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000107">send_remember_cookie! (AuthenticatedSystem)</a><br />
+    <a href="classes/ApplicationController.html#M000040">set_all_categories (ApplicationController)</a><br />
+    <a href="classes/ApplicationController.html#M000041">set_all_levels (ApplicationController)</a><br />
+    <a href="classes/CommentsController.html#M000067">set_status (CommentsController)</a><br />
+    <a href="classes/CategoriesController.html#M000012">show (CategoriesController)</a><br />
+    <a href="classes/Video/PostsController.html#M000073">show (Video::PostsController)</a><br />
+    <a href="classes/PostsController.html#M000032">show (PostsController)</a><br />
+    <a href="classes/PagesController.html#M000002">show (PagesController)</a><br />
+    <a href="classes/Guide/PostsController.html#M000081">show (Guide::PostsController)</a><br />
+    <a href="classes/CommentsController.html#M000061">show (CommentsController)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000096">store_location (AuthenticatedSystem)</a><br />
+    <a href="classes/PublicController.html#M000051">test (PublicController)</a><br />
+    <a href="classes/CommentsController.html#M000065">update (CommentsController)</a><br />
+    <a href="classes/PostsController.html#M000037">update (PostsController)</a><br />
+    <a href="classes/CategoriesController.html#M000016">update (CategoriesController)</a><br />
+    <a href="classes/Guide/PostsController.html#M000086">update (Guide::PostsController)</a><br />
+    <a href="classes/Video/PostsController.html#M000078">update (Video::PostsController)</a><br />
+    <a href="classes/PagesController.html#M000006">update (PagesController)</a><br />
+    <a href="classes/AuthenticatedSystem.html#M000104">valid_remember_cookie? (AuthenticatedSystem)</a><br />
+    <a href="classes/PublicController.html#M000054">video (PublicController)</a><br />
+    <a href="classes/LevelsController.html#M000010">videos (LevelsController)</a><br />
+    <a href="classes/PublicController.html#M000056">view_post (PublicController)</a><br />
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+#header							{background: url(/images/header_bg.png) repeat-x;}
+#header_wrapper					{position:relative;background:url(../images/logo2.png) no-repeat;width:1000px;margin:0 auto;height:119px;}
+#login_form						{position:absolute;top:0px;right:0px;background:url(../images/login.png) no-repeat;width:356px;height:40px;}
+#login_form input				{border:0;margin-top:7px;font-size:12px;background:none;}
+#login_form #login				{width:125px;margin-left:16px;padding:2px 5px 2px 5px}
+#login_form #password			{width:123px;margin-left:10px;padding:2px 5px 2px 5px}
+#login_form #submit_image		{position:absolute;top:0px;right:18px;}
+#login_form_text 				{position:absolute;top:40px;right:20px;color:#fff;font-size:10px;}
+#login_form_text a 				{color:#fff;font-size:10px;}
+
+
+#search_form input				{border:0;margin-top:0px;margin-left:185px;font-size:40px;background:none;}
+#search_form #search			{width:125px;margin-left:13px;font-size:25px;padding:6px 5px 0px 5px}
+#search_form #submit			{margin-left:13px;font-size:5px;padding:6px 5px 0px 5px}
+
+
+#header_wrapper ul				{position:absolute;bottom:0px;right:20px;}
+#header_wrapper ul li			{list-style:none;float:right;}
+#header_wrapper ul li a			{text-decoration:none;float:right;color:#fff;padding:5px 0px 5px 0px;margin-left:20px;font-weight:bold;}
+#header_wrapper ul li a:hover	{text-decoration:underline;}
+
+#content						{background:#fff url(../images/content_bg.png) repeat-x;}
+#content_wrapper    			{width:960px;margin:0 auto;min-height:400px;height:auto!important;height:400px;padding:10px 0px 30px 0px;}
+#content_wrapper #content_l		{width:690px;clear:left;float:left;padding-right:10px;border-right:1px solid #eaeaea;min-height:400px;height:auto!important;height:400px;}
+#content_wrapper #content_l p	{margin-bottom:10px;}
+#content_wrapper #content_r		{width:249px;float:left;padding-left:10px;}
+
+#content_l ul					{padding:15px 0px 15px 0px;}
+#content_l ul li				{list-style:none;}		
+#content_l ul li a				{display:inline; padding:3px 0px 3px 0px;color:#000;font-weight:bold;}		
+#content_l ul li a:hover		{margin-left:5px;}		
+
+#sub_nav ul						{padding: 0px 0px 0px 15px;}
+#sub_nav ul li					{display:inline;padding: 0px 3px 0px 5px; font: 100%/2 Georgia,serif;font-weight:bold;}
+#sub_nav ul li a				{text-decoration:underline;padding: 0px 3px 0px 5px;font: 100%/2 Georgia,serif;font-weight:bold;}
+#sub_nav ul li a:hover			{margin-left:0px;text-decoration: none;}
+
+#content_r ul					{padding:15px 0px 15px 0px;}
+#content_r ul li				{list-style:none;}		
+#content_r ul li a				{display:block;background:url(../images/pil.png) no-repeat 0px; padding:3px 0px 3px 20px;color:#000;font-weight:bold;}		
+#content_r ul li a:hover		{margin-left:5px;}		
+#search_form					{width:249px;height:59px;background:url(../images/search.png) no-repeat}
+
+
+#comment_form					{float:left;width:400px;margin:0 auto;min-height:300px;height:auto!important;height:300px;padding:30px 0px 30px 0px;}
+#left table,textarea,
+select,input[type="text"],
+input[type="password"]			{width:400px}
+
+#footer							{background:url(../images/footer_bg.png) repeat-x;}
+#footer_wrapper    				{width:960px;margin:0 auto;min-height:250px;height:auto!important;height:250px;}
+#footer_wrapper .boks			{float:left;width:310px;height:130px;padding:20px 10px 20px 0px;}
+#footer_wrapper #footer_text   	{color:#fff;font-size:11px;padding-top:20px;clear:both;}
+#footer	h3						{font-family:georgia;font-size:14px; font-weight: bold;}
+#footer ul						{padding:2px 0px 0px 0px;}
+#footer ul li					{list-style:none;}		
+#footer ul li a					{display:block; padding:0px 0px 0px 0px;color:#000;font-weight:bold;}		
+#footer ul li a:hover			{color:#999;}	
+
+*								{margin:0;padding:0;}
+html,body						{font-family:arial;font-size:12px;background:#000;height:101%;}
+.clr							{clear:both;}
+
+h1								{font-family:georgia;font-size:26px;}
+h2								{font-family:georgia;font-size:20px;}
+h2 a							{text-decoration:none;color:#000}
+a								{text-decoration:none;color:#000}
+a:hover								{color:#7c121e}
+
+
+.post							{border-bottom:1px solid #eee;padding-bottom:5px;margin-bottom:20px;}
+
+.css1 { font-size: 1.0em; }
+.css2 { font-size: 1.2em; }
+.css3 { font-size: 1.4em; }
+.css4 { font-size: 1.6em; }
+
+

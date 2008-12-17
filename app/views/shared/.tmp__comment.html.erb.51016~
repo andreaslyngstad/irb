@@ -1,0 +1,8 @@
+
+
+	
+<ul>
+	<b><em><li>Skrevet av <%= h(comment.author)%>, <%=h(comment.created_at.strftime("%B %d %Y"))%></li></em></b>
+		<li><%= h(comment.content) %></li>
+</ul>
+

@@ -1,0 +1,31 @@
+
+<% @page_title = "Bloggkategorier" -%>
+<h1 class="title">Kategorier</h1>
+
+
+
+<div id="katoverskrifter">
+	<b><ul>
+	<li>Tittel</li>	    
+   	<li>Beskrivelse</li>
+	</ul></b>
+</div>
+<div id="katunder"> 
+
+	<% for category in @categories -%>
+ 	 <ul>
+	 <li style="width: 10em"><%= truncate(h(category.name), 20, "...") %></li>
+	<li style="width: 30em"><%= truncate(h(category.des), 90, "...") %></li>
+	<li><%= link_to( 'Oppdater', :action => "index", :id => category) %>
+   <%= link_to 'Slett', category, :confirm => 'Er du sikker på at du vil slette denne kategorien?', :method => :delete %></li>
+  <br/>
+   <% end -%>
+
+ 	<% form_for(@category, if params[:id].blank? then { :action => "create"} else {:action => "update", :id => @category}end)  do |f|%>
+	<li style="width: 10em"><%= f.text_field( :name, :size => "12em")%></li>
+ 	<li style="width: 31em"><%= f.text_field( :des, :size => "50em") %></li>
+  	<li><%= f.submit(params[:id].blank? ? 'Ny' : 'Oppdater')  %> </li>
+	</ul>
+   <% end -%>
+
+</div>

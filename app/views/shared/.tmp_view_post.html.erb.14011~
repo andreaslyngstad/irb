@@ -1,0 +1,35 @@
+
+<%= @post.lead %>
+<div id="content_l">
+<ul>
+	<li><h1><%= @post.title %></h1></li>
+	
+<em><li><b>Av</b><%= h(@post.author.full_name) %>, 
+				<%= h(@post.created_at.strftime("%d. %B %Y")) %>. 
+			<b>|Kategorisert</b>
+			<b>|Brukernivå:</b> <% if !@post.level.nil? -%><%= @post.level.name %><% end -%></li></em><br />					
+	<b><li><%= h(@post.lead) %></li></b><br />
+	<% if @post.slag == "video" %>
+	<%= link_to(image_tag("se_video.jpg", :border => 1), @post.video_url) %><br /><br />
+	<% end %>
+	
+<div id=post_content><li><%=  parse_coderay(@post.content) %></li></div>
+	
+	
+</ul>
+
+<% if @post.comments_count != 0%>
+<div id="comments">
+	<h3>Kommentarer</h3>
+		<%= render(:partial => 'shared/comment', :collection => @post.approved_comments) %>
+		</div>
+	<% end -%>
+	
+<%= render :partial => "shared/newcomment"%>
+
+
+</div>
+<div id="content_r">
+	<%= render :partial => "shared/links" %>	
+	
+</div>

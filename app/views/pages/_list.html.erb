@@ -1,0 +1,39 @@
+
+
+<div id="content_l">
+	<div id="sideoverskrifter">
+	
+	</div>
+	<div id="sideunder"> 
+	
+<% if !@page.nil?%>
+<p>
+  <b>Navn:</b><br />
+  <%=h @page.name %>
+</p>
+<p>
+  <b>Link til denne siden:</b><br />
+  <%=h @page.navlabel %>
+</p>
+<p>
+  <b>Tittel:</b><br />
+  <%=h @page.title %>
+</p>
+
+<p>
+  <b>Innhold:</b>
+  <%= @page.body %>
+</p>
+	<%end-%>
+	</div>
+</div>
+
+	<div id="sidecontent_r">
+		<h1 class="title">Sider|<%= link_to 'Ny side', new_page_path %></h1>
+
+<%= nested_set_list_for Page.roots %>
+	
+	
+	</div>
+  
+ 
